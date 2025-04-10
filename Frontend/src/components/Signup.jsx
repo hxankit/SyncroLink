@@ -34,25 +34,30 @@ const Signup = () => {
   const sendOtpHandler = async () => {
     if (!input.email) return toast.error("Please enter your email to get OTP");
     if (!isValidEmail(input.email)) return toast.error("Please enter a valid email address");
-
+  
     try {
+      if (otpLoading) return; // Prevent duplicate requests
       setOtpLoading(true);
+  
       const res = await axios.post('https://syncrolink.onrender.com/api/v1/user/sendOtp', {
         email: input.email
       });
-
-      if (res.data.message) {
+  
+      if (res?.data?.message) {
         toast.success("OTP sent successfully to your email");
         setOtpSent(true);
         setTimeout(() => otpInputRef.current?.focus(), 200);
+      } else {
+        throw new Error("Unexpected response from server");
       }
     } catch (error) {
       console.error("Send OTP Error:", error);
-      toast.error(error.response?.data?.message || "Failed to send OTP");
+      toast.error(error.response?.data?.message || error.message || "Failed to send OTP");
     } finally {
       setOtpLoading(false);
     }
   };
+  
 
   const signupHandler = async (e) => {
     e.preventDefault();
