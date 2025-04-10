@@ -37,7 +37,7 @@ const Signup = () => {
 
     try {
       setOtpLoading(true);
-      const res = await axios.post('https://syncrolink.onrender.com//api/v1/user/sendOtp', {
+      const res = await axios.post('https://syncrolink.onrender.com/api/v1/user/sendOtp', {
         email: input.email
       });
 
