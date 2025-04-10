@@ -65,7 +65,7 @@ const Signup = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post('https://syncrolink.onrender.com//api/v1/user/register', input, {
+      const res = await axios.post('https://syncrolink.onrender.com/api/v1/user/register', input, {
         headers: { 'Content-Type': 'application/json' },
         withCredentials: true
       });
