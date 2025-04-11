@@ -84,7 +84,8 @@ const ChatPage = () => {
             {/* Chat Section */}
             {
                 selectedUser && (
-                    <section className='flex flex-col flex-1 h-full'>
+
+                    <section className='flex flex-col flex-1 h-full' >
                         {/* Header with back for mobile */}
                         <div className='flex items-center gap-3 px-3 py-2 border-b border-gray-300 sticky top-0 bg-white z-10'>
                             <div className='sm:hidden'>
