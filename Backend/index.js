@@ -14,7 +14,7 @@ dotenv.config();
  console.log(process.env.MONGO_URI);
  
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 const __dirname = path.resolve();
 
