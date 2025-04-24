@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
 const corsOptions = {
-    origin: "https:/syncrolink.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true,
     
     optionSuccessStatus: 200

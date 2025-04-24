@@ -39,7 +39,7 @@ const Signup = () => {
       if (otpLoading) return; // Prevent duplicate requests
       setOtpLoading(true);
   
-      const res = await axios.post('https://syncrolink.onrender.com/api/v1/user/sendOtp', {
+      const res = await axios.post('http://localhost:8000/api/v1/user/sendOtp', {
         email: input.email
       });
   
@@ -62,10 +62,9 @@ const Signup = () => {
   const signupHandler = async (e) => {
     e.preventDefault();
     if (!input.otp) return toast.error("Please enter the OTP to register");
-
     try {
       setLoading(true);
-      const res = await axios.post('https://syncrolink.onrender.com/api/v1/user/register', input, {
+      const res = await axios.post('http://localhost:8000/api/v1/user/register', input, {
         headers: { 'Content-Type': 'application/json' },
         withCredentials: true
       });
