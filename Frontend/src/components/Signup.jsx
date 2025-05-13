@@ -39,7 +39,7 @@ const Signup = () => {
       if (otpLoading) return; // Prevent duplicate requests
       setOtpLoading(true);
   
-      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/user/sendOtp`, {
+      const res = await axios.post(`https://syncrolink.onrender.com/api/v1/user/sendOtp`, {
         email: input.email
       });
   
