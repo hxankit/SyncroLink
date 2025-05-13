@@ -5,6 +5,7 @@ import { User } from "../models/user.model.js";
 import { Comment } from "../models/comment.model.js";
 import { getReceiverSocketId, io } from "../socket/socket.js";
 
+
 export const addNewPost = async (req, res) => {
     try {
         const { caption } = req.body;
